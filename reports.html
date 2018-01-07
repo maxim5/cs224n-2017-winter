@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CS224n: Natural Language Processing with Deep Learning</title>
+
+  <!-- bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+  <!-- Google fonts -->
+  <link href='http://fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css's>
+
+  <!-- Google Analytics -->
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-60458624-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+
+  <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+
+<body>
+
+<div id="header">
+  <a href="http://nlp.stanford.edu/">
+    <img src="http://nlp.stanford.edu/sentiment/images/nlp-logo.gif" style="height:50px; float: left; margin-left: 20px;">
+  </a>
+  <a href="index.html">
+  <h1>CS224n: Natural Language Processing with Deep Learning</h1>
+  </a>
+  <div style="clear:both;"></div>
+</div>
+
+
+
+<div class="sechighlight">
+<div class="container sec">
+  <h1>Course Project Reports for 2017</h1>
+</div>
+</div>
+
+<div class="container sec">
+There were two options for the course project. Students either chose their own topic ("Final Project") or built models for reading comprehension on the <a href=https://rajpurkar.github.io/SQuAD-explorer/>SQuAD</a> dataset ("Default Final Project").
+</div>
+
+<div class="container sec">
+<h3>Prize Winners</h3>
+Congratulations to our prize winners for having exceptional class projects!<br>
+
+<h4>Final Project Prize Winners</h4>
+    <ol>
+        <li><a href="reports/2762090.pdf">Beating Atari with Natural Language Guided Reinforcement Learning</a> by Alexander Antonio Sosa / Christopher Peterson Sauer / Russell James Kaplan</li>
+        <li><a href="reports/2748290.pdf">Image-Question-Linguistic Co-Attention for Visual Question Answering</a> by Shutong Zhang / Chenyue Meng / Yixin Wang</li>
+        <li><i>Ruminating Neural Networks with Auto-regressive Attention Units</i> by Jin Xie / Hao Sheng / Junzi Zhang</li>
+    </ol>
+<h5> Outstanding posters</h5>
+<ul>
+<li><a href="reports/2761955.pdf">Sequence to Sequence Model for Video Captioning</a> by Yu Guo / Yue Liu / Bowen Yao</li>
+<li><a href="reports/2762012.pdf">Grounded Learning of Color Semantics with Autoencoders</a> by Dev Bhargava / Gabriel Michael Vega / Blue Belmont Sheffer</li>
+<li><a href="reports/2731372.pdf">Power to the People: Using Deep Learning to Predict Power Relations</a> by Angela Kong / Catherina Xu / Michelle Sau-Ming Lam</li>
+<li><a href="reports/2760013.pdf">CALYPSO: A Neural Network Model for Natural Language Inference</a> by Colin Man / Kat Elizabeth Gregory / Kenny Xu</li>
+<li><a href="reports/2761006.pdf">DeepZip: Lossless Compression using Recurrent Networks</a> by Kedar Tatwawadi</li>
+</ul>
+
+<h4>Default Final Project Prize Winners</h4>
+    <ol>
+        <li><a href="reports/2762006.pdf">Reading Comprehension on the SQuAD Dataset</a> by Fnu Budianto</li>
+        <li><a href="reports/2760784.pdf">Question Answering System with Bi-Directional Attention Flow</a> by Fei Xia / Junjie Ke / Yolanda Wang</li>
+        <!--li><a href="reports/2760533.pdf">"Bidirectional Attention Flow with Dependency Parses for Question Answering"</a> by Pujun Bhatnagar / Michael Chen</li-->
+    </ol>
+
+<h5> Outstanding posters</h5>
+<ul>
+<li><i>Finding Answers with Convolution Attention Stacks</i> by Yair Carmon</li>
+<li><i>Reading Comprehension</i> by Joe Wang</li>
+<li><a href="reports/2762015.pdf">Coattention-Based Neural Network for Question Answering</a> by Cristian Zanoci / Jim Michael Andress</li>
+<li><a href="reports/2761946.pdf">Natural Language Question-Answering using Deep Learning</a> by Fengjiao Lyu / Rajarshi Roy / Bowen Liu</li>
+<li><i>Iterative Attention Network for Question Answering</i> by Tom Charles Henighan</li>
+</ul>
+<h4>Sponser Prize</h4>
+    <ul>
+        <li><a href="reports/2761128.pdf">Modeling the Dynamic Framing of Controversial Topics in Online Communities</a> by Julia Elizabeth Mendelsohn</li>
+    </ul>
+
+<h4>Audience Selection Prize</h4>
+<ul>
+  <li><a href="reports/2762090.pdf">Beating Atari with Natural Language Guided Reinforcement Learning</a> by Alexander Antonio Sosa / Christopher Peterson Sauer / Russell James Kaplan</li>
+</ul>
+</div>
+
+<!-- ----------------------------------------- -->
+</table>
+</div>
+<div class="container sec">
+<h3>Final Projects</h3>
+<table class="table">
+  <tr class="active">
+    <th>Project Name</th><th>Authors</th>
+  </tr>
+<tr><td><a href="reports/2748325.pdf">Deep Almond: A Deep Learning-based Virtual Assistant</a></td><td>Rakesh Ramesh / Giovanni Campagna</td></tr>
+<tr><td><a href="reports/2731326.pdf">Effective Word Representation for Named Entity Recognition</a></td><td>Wendi Liu / Eric Li / Tim Hsieh</td></tr>
+<tr><td><a href="reports/2744372.pdf">Learning Effective Embeddings from Medical Notes</a></td><td>Sebastien Pierre Romain Dubois / Nathanael Romano</td></tr>
+<tr><td><a href="reports/2762104.pdf">An Examination of the CNN/DailyMail Neural Summarization Task</a></td><td>Eduardo Torres Montano / Liezl Legaspi Puzon / Vincent Chen</td></tr>
+<tr><td><a href="reports/2762042.pdf">Word Sense Disambiguation Using Skip-Gram and LSTM Models</a></td><td>Armin Justin Namavari / Tyler Otha Smith / Shrey Gupta</td></tr>
+<!-- <tr><td><a href="reports/2760638.pdf">Fighting Fake News using Deep Learning</a></td><td>Rishabh Bhargava / Ben Limonchik / Pulkit Agrawal</td></tr> -->
+<tr><td><a href="reports/2760320.pdf">Sequential LSTM-based Encoder for NLI</a></td><td>Ankita Sharma / Yokila Arora</td></tr>
+<tr><td><a href="reports/2752057.pdf">Looking for Low-proficiency Sentences in ELL Writing</a></td><td>Shayne Miel</td></tr>
+<tr><td><a href="reports/2762054.pdf">Natural Language Inference with Attentive Neural Networks</a></td><td>Julien Juilliard Kawawa-Beaudan / Varun Kumar Vijay / Kenny Kin Fai Leung</td></tr>
+<tr><td><a href="reports/2741251.pdf">Neural Image Captioning for Intelligent Vehicle-to-Passenger Communication</a></td><td>Fredrik Karl Anders Gustafsson</td></tr>
+<tr><td><a href="reports/2761936.pdf">Neural Stance Detectors for Fake News Challenge</a></td><td>Shanshan Xu / Quan Zhou / Qi Zeng</td></tr>
+<tr><td><a href="reports/2731315.pdf">Automated Essay Feedback</a></td><td>Sawyer Birnbaum / Noah Samuel Arthurs</td></tr>
+<tr><td><a href="reports/2761162.pdf">Discourse Parsing via Weighted Bag-of-Words, Coattention Neural Encoder, and Coattentative Convolutional Neural Network</a></td><td>Alex Fu / Yang Yuan / Borui Wang</td></tr>
+<tr><td><a href="reports/2761080.pdf">Speech recognition with DNN-LAS</a></td><td>Jack Jin / Pengda Liu / Geng Zhao</td></tr>
+<tr><td><a href="reports/2761183.pdf">TrumpBot: Seq2Seq with Pointer Sentinel Model</a></td><td>Filip Zivkovic</td></tr>
+<tr><td><a href="reports/2760222.pdf">Implementing A Neural Cache LSTM</a></td><td>Christina Wadsworth / Raphael Martin Palefsky-Smith</td></tr>
+<tr><td><a href="reports/2701352.pdf">Natural Language Learning Supports Reinforcement Learning</a></td><td>Andrew Kyle Lampinen</td></tr>
+<tr><td><a href="reports/2760502.pdf">From Vision to NLP: A Merge</a></td><td>Alisha Mangesh Rege / Payal Bajaj</td></tr>
+<tr><td><a href="reports/2761091.pdf">Learning to Rank with Attentive Media Attributes</a></td><td>Yang Yang / Baldo Antonio Faieta</td></tr>
+<tr><td><a href="reports/2761914.pdf">Summarizing Git Commits and GitHub Pull Requests Using Sequence to Sequence Neural Attention Models</a></td><td>Ali-Kazim Zaidi</td></tr>
+<tr><td><a href="reports/2736946.pdf">Neural Networks in Predicting Myers Brigg Personality Type From Writing Style</a></td><td>Anthony Kai Kwang Ma / Gus Liu</td></tr>
+<tr><td><a href="reports/2762086.pdf">Estimating High-Dimensional Temporal Distributions Application to Music & Language Generation</a></td><td>Adrien Descamps / Maxime Alexandre Voisin</td></tr>
+<tr><td><a href="reports/2754942.pdf">“Is it true?” – Deep Learning for Stance Detection in News</a></td><td>Shruti Bhargava / Neel Vinod Rakholia</td></tr>
+<tr><td><a href="reports/2761920.pdf">Abstract Meta-Concept Features for Text-Illustration</a></td><td>Ines Chami</td></tr>
+<!-- <tr><td><a href="reports/2760229.pdf">Deep Neural Parsing for Database Query</a></td><td>Yinglan Ma / Hongyu Xiong / Kaifeng Chen</td></tr> -->
+<!-- <tr><td><a href="reports/2761119.pdf">Exploring Open-Domain Question Answering on Real-World User Data</a></td><td>Vikranth Reddy Dwaracherla / Sagar Kashinath Honnungar / Manjana Chandrasekharan</td></tr> -->
+<tr><td><a href="reports/2761957.pdf">Detecting Key Needs in Crisis</a></td><td>Emma Marriott / Emma Marriott / Tulsee Doshi / Jay H Patel</td></tr>
+<tr><td><a href="reports/2761028.pdf">Towards Automatic Identification of Fake News: Headline-Article Stance Detection with LSTM Attention Models</a></td><td>John Merriman Sholar / Saachi Jain / Sahil Chopra</td></tr>
+<tr><td><a href="reports/2717471.pdf">Image Titles - Variations on Show, Attend and Tell</a></td><td>Robert Konrad / Vincent Sitzmann / Timon Dominik Ruban</td></tr>
+<tr><td><a href="reports/2761239.pdf">Fake News, Real Consequences: Recruiting Neural Networks for the Fight Against Fake News</a></td><td>Chris Coffey Proctor / Richard Lee Davis</td></tr>
+<tr><td><a href="reports/2756526.pdf">Image Captioning with Pragmatics</a></td><td>Noam Weinberger / Nico Manuel Chaves / Reuben Harry Cohn-Gordon</td></tr>
+<!-- <tr><td><a href="reports/2758219.pdf">Sequence memory and representation in recurrent neural networks</a></td><td>Don Lee / Byungwoo Kang</td></tr> -->
+<tr><td><a href="reports/2761035.pdf">What’s good for the goose is good for the GANder - Comparing Generative Adversarial Networks for NLP</a></td><td>Brendan Mooney Corcoran / Christina Jenny Hung</td></tr>
+<tr><td><a href="reports/2753780.pdf">Implementation and Optimization of Differentiable Neural Computers</a></td><td>Carol Hsin</td></tr>
+<tr><td><a href="reports/2759862.pdf">Cosine Siamese Models for Stance Detection</a></td><td>Delenn Tzu Chin / Kevin Chen / Akshay Kumar Agrawal</td></tr>
+<tr><td><a href="reports/2761115.pdf">A Neural Chatbot with Personality</a></td><td>David Rey Morales / Huyen Thi Khanh Nguyen / Tessera Chin</td></tr>
+<tr><td><a href="reports/2762088.pdf">Deep Classification and Generation of Reddit Post Titles</a></td><td>Rolland Wu He / Tyler Foster Chase / Will Qiu</td></tr>
+<tr><td><a href="reports/2762092.pdf">Comment Abuse Classification with Deep Learning</a></td><td>Theodora Chu / Max Wang / Kylie Amanda Jue</td></tr>
+<tr><td><a href="reports/2757511.pdf">Writing Style Conversion using Neural Machine Translation</a></td><td>Se Won Jang / Jesse Min / Mark Kwon</td></tr>
+<!-- <tr><td><a href="reports/2731404.pdf">English-Simple English Translation with RNN</a></td><td>Wanzi Zhou / Qiwen Fu / Haihong Li</td></tr> -->
+<tr><td><a href="reports/2749095.pdf">Abstractive Text Summarization using Attentive Sequence-to-Sequence RNNs</a></td><td>Abiel Gutierrez / Elliott Morgan Jobson</td></tr>
+<!-- <tr><td><a href="reports/2756835.pdf">Statistical Tests for Neural Networks: An Efficient Way to Prune Networks and Increase Interpretability</a></td><td>Indira Puri</td></tr> -->
+<tr><td><a href="reports/2761918.pdf">Neural Conversational Model with Mutual Information Ranking</a></td><td>Chenye Zhu / Harrison Chi-Wei Ho</td></tr>
+<tr><td><a href="reports/2760325.pdf">Exploring the Effects of External Semantic Data on Word Embeddings</a></td><td>William Chun Ki Hang / Brian Hu Zhang / Zihua Liu</td></tr>
+<tr><td><a href="reports/2762076.pdf">Music Composition using Recurrent Neural Networks</a></td><td>Axel Sly / Yuki Inoue / Nipun Agarwala</td></tr>
+<tr><td><a href="reports/2741414.pdf">Detecting and Identifying Bias-Heavy Sentences in News Articles</a></td><td>Shreya Shankar / Nick Paul Hirning / Andy Shiangjuei Chen</td></tr>
+<tr><td><a href="reports/2760332.pdf">Neural Joke Generation</a></td><td>He Ren / Quan Yang</td></tr>
+<tr><td><a href="reports/2737045.pdf">Named Entity Recognition and Compositional Morphology for Word Representations in Chinese</a></td><td>Christopher Heung / Emily Ling / Cindy Shinying Lin</td></tr>
+<tr><td><a href="reports/2744196.pdf">Tagging Patient Notes With ICD-9 Codes</a></td><td>Sandeep Ayyar / Oliver John Bear Don't Walk</td></tr>
+<!-- <tr><td><a href="reports/2759408.pdf">Extracting Summaries from Congressional Bills with Deep Neural Networks</a></td><td>Ishan Somshekar / Anna Wang</td></tr> -->
+<tr><td><a href="reports/2758630.pdf">GraphNet: Recommendation System Based on Language and Network Structure</a></td><td>Xin Li / Rex Ying / Yuanfang Li</td></tr>
+<tr><td><a href="reports/2760395.pdf">“Unmatched” Attention for Natural Language Inference</a></td><td>Homero Gabriel Roman Roman / Vinson Luo / Alex Tamkin</td></tr>
+<!-- <tr><td><a href="reports/2758253.pdf">Text Generation using Generative Adversarial Networks</a></td><td>Vincent-Pierre Serge Mary Berges / Isabel Frances Bush / Pol Rosello</td></tr> -->
+<tr><td><a href="reports/2760362.pdf">Aiding Sentiment Evaluation with Social Network</a></td><td>Fan Yang / Pengfei Gao / Hao Yin</td></tr>
+<!-- <tr><td><a href="reports/2760982.pdf">A Seq2Seq Attention Model for Fake News Detection</a></td><td>Matthew Makoto Volk / Jonas Beachey Kemp</td></tr> -->
+<tr><td><a href="reports/2751115.pdf">Reversing Dictionaries and Solving Crossword Clues with Deep Learning</a></td><td>Meena Chetty / Viraj R Mehta</td></tr>
+<tr><td><a href="reports/2761178.pdf">Quora Question Duplication</a></td><td>Elkhan Dadashov / Sukolsak Sakshuwong / Katherine Yu</td></tr>
+<tr><td><a href="reports/2760954.pdf">Automatic Code Completion</a></td><td>Lindsey Makana Kostas / Tara Gayatri Balakrishnan / Adam Palazzo Ginzberg</td></tr>
+<tr><td><a href="reports/2737169.pdf">Deep Causal Inference for Average Treatment Effect Estimation of Poems Popularity</a></td><td>Derek Farren</td></tr>
+<tr><td><a href="reports/2732277.pdf">Distributed representations of politicians</a></td><td>Bobbie Macdonald</td></tr>
+<tr><td><a href="reports/2743946.pdf">Predicting Stock Movement through Executive Tweets</a></td><td>Mike Logan Jermann</td></tr>
+<!-- <tr><td><a href="reports/2759154.pdf">What information do earnings press releases convey?</a></td><td>Ken Li</td></tr> -->
+<tr><td><a href="reports/2760925.pdf">Information Retrieval from Surgical Reports using Data Programming</a></td><td>Zeshan Mohammed Hussain / Hardie Hardie Cate / Elliott Jake Chartock</td></tr>
+<tr><td><a href="reports/2761133.pdf">Text Generation using Generative Adversarial Training</a></td><td>Xuerong Xiao</td></tr>
+<!-- <tr><td><a href="reports/2745809.pdf">Certified Fresh: Summarizing Rotten Tomatoes Reviews</a></td><td>Michael John Arruza-Cruz / Isis Mei Grant</td></tr> -->
+<tr><td><a href="reports/2760230.pdf">Stance Detection for the Fake News Challenge: Identifying Textual Relationships with Deep Neural Nets</a></td><td>Philipp Thun-Hohenstein / Ali Khalid Chaudhry / Darren Baker</td></tr>
+<tr><td><a href="reports/2735427.pdf">Predicting Short Story Endings</a></td><td>Michael Mernagh</td></tr>
+<tr><td><a href="reports/2759272.pdf">Comparing Deep Learning and Conventional Machine Learning for Authorship Attribution and Text Generation</a></td><td>Francisco Alejandro Romero / Gregory Charles Luppescu</td></tr>
+<tr><td><a href="reports/2759336.pdf">Duplicate Question Pair Detection with Deep Learning</a></td><td>Travis Addair</td></tr>
+<tr><td><a href="reports/2748423.pdf">Song Title Prediction with Bidirectional Recurrent Sequence Tagging</a></td><td>Ryan Holmdahl</td></tr>
+<!-- <tr><td><a href="reports/2743640.pdf">Neural Headline Generation</a></td><td>Alexandre Elkrief</td></tr> -->
+<!-- <tr><td><a href="reports/2731190.pdf">Deep Learning for Codenames Bot</a></td><td>Ching-Wen Hsu</td></tr> -->
+<tr><td><a href="reports/2728368.pdf">Music Genre Classification by Lyrics using a Hierarchical Attention Network</a></td><td>Alex Tsaptsinos</td></tr>
+<tr><td><a href="reports/2762066.pdf">Recurrent and Contextual Models for Visual Question Answering</a></td><td>Abhijit Sharang / Eric Chun Kai Lau</td></tr>
+<tr><td><a href="reports/2760298.pdf">Identifying Nominals with No Head Match Co-references Using Deep Learning</a></td><td>Matthew David Stone / Ramnik Arora</td></tr>
+<tr><td><a href="reports/2760496.pdf">Stance Detection for Fake News Identification</a></td><td>Atli Kosson / Eli Wang / Damian Mrowca</td></tr>
+<tr><td><a href="reports/2759891.pdf">Transfer Learning on Stack Exchange Tags</a></td><td>Shifan Mao / Weiqiang Zhu / Jake Dong</td></tr>
+<tr><td><a href="reports/2748045.pdf">Detecting Duplicate Questions with Deep Learning</a></td><td>Stuart Lee Sy / Christopher Tzong-Ran Yeh / Yushi Homma</td></tr>
+<tr><td><a href="reports/2758157.pdf">Ensembling Insights for Baseline Text Models</a></td><td>Henry Richman Ehrenberg / Dan Iter</td></tr>
+<tr><td><a href="reports/2762063.pdf">Deep Poetry: Word-Level and Character-Level Language Models for Shakespearean Sonnet Generation</a></td><td>Stanley Xie / Max Austin Chang / Ruchir Rastogi</td></tr>
+<tr><td><a href="reports/2762071.pdf">Abstractive Summarization with Global Importance Scores</a></td><td>Vivian Hoang-Dung Nguyen / Shivaal Kaul Roy</td></tr>
+<tr><td><a href="reports/2762087.pdf">Too Many Questions</a></td><td>Jeffrey Jialei Zhang / Ann He</td></tr>
+<tr><td><a href="reports/2748516.pdf">Awkwardly: A Response Suggester</a></td><td>Kai-Chieh Huang / Quinlan Rachel Jung</td></tr>
+<tr><td><a href="reports/2737434.pdf">Evaluating Generative Models for Text Generation</a></td><td>Raunaq Rewari / Prasad Kawthekar / Suvrat Bhooshan</td></tr>
+<!-- <tr><td><a href="reports/2760712.pdf">Automatic Headlines Generation for Newspaper stories</a></td><td>Mohana Prasad Sathya Moorthy / Ankita Bihani / Anupriya Gagneja</td></tr> -->
+<!-- <tr><td><a href="reports/2760704.pdf">Debate Card Summarization with LSTM Networks</a></td><td>Dan Xiaoyu Yu / Travis Spencer Chen</td></tr> -->
+<tr><td><a href="reports/2762064.pdf">Using Neural Networks to Predict Emoji Usage from Twitter Data</a></td><td>Connie Xiao Zeng / Luda Zhao</td></tr>
+<tr><td><a href="reports/2760297.pdf">The Challenge of Fake News: Automated Stance Detection via NLP</a></td><td>Jeff T. Sheng / Evan Taylor Ragosa Rosenman</td></tr>
+<tr><td><a href="reports/2757443.pdf">RNNs for Stance Detection between News Articles</a></td><td>Graham John Yennie / Jason Yu Chen / Joe Robert Johnson</td></tr>
+<!-- <tr><td><a href="reports/2717688.pdf">Short Answer Scoring by Deep Nets</a></td><td>Zhaodong Wang</td></tr> -->
+<tr><td><a href="reports/2710385.pdf">“The Pope Has a New Baby!” Fake News Detection Using Deep Learning</a></td><td>Samir Bajaj</td></tr>
+<tr><td><a href="reports/2761233.pdf">Transfer Learning: From a Translation Model to a Dense Sentence Representation with Application to Paraphrase Detection</a></td><td>Max Ferguson</td></tr>
+<tr><td><a href="reports/2748568.pdf">Stance Detection for the Fake News Challenge with Attention and Conditional Encoding</a></td><td>Ferdinand Legros / Oskar Jonathan Triebe / Stephen Robert Pfohl</td></tr>
+<!-- <tr><td><a href="reports/2760721.pdf">Lending Club Default Analysis Unsupervised Questioning Systems</a></td><td>Zhenqin Wu / Jiacheng Zou / Feng Liu</td></tr> -->
+<tr><td><a href="reports/2746841.pdf">Language Dynamics analysis through Word2Vec Embeddings</a></td><td>Jeha Yang / Claire Louise Donnat</td></tr>
+<tr><td><a href="reports/2733282.pdf">TL;DR: Improving Abstractive Summarization Using LSTMs</a></td><td>Sang Goo Kang / Samuel Kim</td></tr>
+<tr><td><a href="reports/2746634.pdf">News Article Summarization with Attention-based Deep Recurrent Neural Networks</a></td><td>Chao Wang / Chang Yue / Yoyo Yu</td></tr>
+<tr><td><a href="reports/2761202.pdf">Biomedical Named Entity Recognition Using Neural Networks</a></td><td>George Mavromatis</td></tr>
+<tr><td><a href="reports/2761951.pdf">Lazy Prices: Vector Representations of Financial Disclosures and Market Outperformance</a></td><td>Alex Hanyu Lin / Victor Cheung / Kai Maroon Kuspa</td></tr>
+<tr><td><a href="reports/2760038.pdf">Coreferent Mention Detection using Deep Learning</a></td><td>Aditya Barua / Piyush Sharma</td></tr>
+<!-- <tr><td><a href="reports/2748337.pdf">CNN-Attention-LSTM Image Caption Generator</a></td><td>Xiaobai Ma / Zhenkai Wang / Zhi Bie</td></tr> -->
+<tr><td><a href="reports/2760407.pdf">Hybrid Word-Character Neural Machine Translation for Modern Standard Arabic</a></td><td>Siggi Kjartansson / Pamela Toman</td></tr>
+<tr><td><a href="reports/2755456.pdf">Autoregressive Attention for Parallel Sequence Modeling</a></td><td>Jeremy Andrew Irvin / Dillon Anthony Laird</td></tr>
+<tr><td><a href="reports/2761938.pdf">The ROUGE-AR: A Proposed Extension to the ROUGE Evaluation Metric for Abstractive Text Summarization</a></td><td>Sydney Chase Maples</td></tr>
+<tr><td><a href="reports/2760995.pdf">Understanding and Predicting the Usefulness of Yelp Reviews</a></td><td>David Zhan Liu</td></tr>
+<tr><td><a href="reports/2742322.pdf">Are Latent Sentence Vectors Cross-Linguistically Invariant?</a></td><td>Michael Hermann Hahn</td></tr>
+<tr><td><a href="reports/2761953.pdf">Neural Review Ranking Models for Ads at Yelp</a></td><td>Florian Karl Hartl / Vishnu Purushothaman Sreenivasan</td></tr>
+<tr><td><a href="reports/2742800.pdf">Melody-to-Chord using paired model and multi-task learning language modeling</a></td><td>Yen-Kai Huang / Wei-Ting Hsu / Mu-Heng Yang</td></tr>
+<tr><td><a href="reports/2735436.pdf">Classifying Reddit comments by subreddit</a></td><td>Ian Tam</td></tr>
+<!-- <tr><td><a href="reports/2761139.pdf">Conversational Question Understanding</a></td><td>Gary Ren</td></tr> -->
+<tr><td><a href="reports/2761173.pdf">Dating Text From Google NGrams</a></td><td>Aashna Shroff / Kelsey Marie Josund / Akshay Rampuria</td></tr>
+<!-- <tr><td><a href="reports/2762040.pdf">Recommendations and Sentiment from Amazon Product Reviews</a></td><td>Cody Austun Coleman</td></tr> -->
+<tr><td><a href="reports/2761033.pdf">Universal Dependency Parser: A Single Parser for Many Languages on Arc-Swift</a></td><td>Frank Fan / Michelle Guo</td></tr>
+<!-- <tr><td><a href="reports/2762078.pdf">Classifying Customer Support Emails with Deep Learning</a></td><td>Jason Andrew Kriss</td></tr> -->
+<!-- <tr><td><a href="reports/2726553.pdf">The Biggest EN-JA Machine Translation Dataset and Why You Shouldnt Trust Tensorflow</a></td><td>Reid Pryzant</td></tr> -->
+<tr><td><a href="reports/2760664.pdf">Exploring Optimizations to Paragraph Vectors</a></td><td>Zoe Michelle Robert / Maya Thadaney Israni / Gabbi Samantha Fisher</td></tr>
+<tr><td><a href="reports/2748301.pdf">Determining Entailment of Questions in the Quora Dataset</a></td><td>Albert Jia-Xiang Tung / Eric Yanmin Xu</td></tr>
+<tr><td><a href="reports/2758144.pdf">Extending the Scope of Co-occurrence Embedding</a></td><td>Jack Mi / Yuetong Wang / Jiren Zhu</td></tr>
+<tr><td><a href="reports/2731248.pdf">Smart Initialization Yields Better Convergence Properties in Deep Abstractive Summarization</a></td><td>Maneesh Dilip Apte / Casey Chu / Liam O'hart Kinney</td></tr>
+<tr><td><a href="reports/2784756.pdf">LSTM Encoder-Decoder Architecture with Attention Mechanism for Machine Comprehension</a></td><td>Brian Magid Higgins / Eugene Jinyoung Nho</td></tr>
+<tr><td><a href="reports/2760185.pdf">Deep Learning based Authorship Identification</a></td><td>Chen Qian / Tianchang He / Rao Zhang</td></tr>
+<tr><td><a href="reports/2749103.pdf">Computational models for text summarization</a></td><td>Leo Michael Keselman / Ludwig Schubert</td></tr>
+<tr><td><a href="reports/2759688.pdf">Multitask Learning and Extensions of Dynamic Coattention Network</a></td><td>Keven Wang / Xinyuan Huang</td></tr>
+<!-- <tr><td><a href="reports/2762026.pdf">Linguistic Indicators of Academic Prestige</a></td><td>Devin Dan Lu / Jessica Tsu-Yun Su</td></tr> -->
+<tr><td><a href="reports/2760764.pdf">Predicting State-Level Agricultural Sentiment with Tweets from Farming Communities</a></td><td>Darren Hau / Swetava Ganguli / Jared Alexander Dunnmon / Brooke Elena Husic</td></tr>
+<tr><td><a href="reports/2737035.pdf">“Nowcasting” County Unemployment Using Twitter Data</a></td><td>Thao Thi Thach Nguyen / Megha Bhushan Srivastava</td></tr>
+<tr><td><a href="reports/2758389.pdf">Rationalizing Sentiment Analysis in Tensorflow</a></td><td>Henry John Neeb / Kevin Eugene Shaw / Aly Rachel Kane</td></tr>
+<tr><td><a href="reports/2761021.pdf">Word2Vec using Character n-grams</a></td><td>Varsha Sankar / Radhika Pramod Patil / Deepti Sanjay Mahajan</td></tr>
+<tr><td><a href="reports/2755939.pdf">Natural Language Inference for Quora Dataset</a></td><td>Kyu Koh Yoo / Muhammad Majid Almajid / Yang Wong</td></tr>
+<tr><td><a href="reports/2737816.pdf">Logfile Failure Prediction using Recurrent and QuasiRecurrent Neural Networks</a></td><td>Isuru Umayangana Daulagala / Austin Jiao</td></tr>
+<tr><td><a href="reports/2760356.pdf">Abstractive Text Summarization with Quasi-Recurrent Neural Networks</a></td><td>Jeffrey Kenichiro Hara / Sho Arora / Peter August Adelson</td></tr>
+<tr><td><a href="reports/2762095.pdf">Tell Me What I See</a></td><td>Victor Valeriiovych Makoviichuk / Peter Lapko / Boris Borisovich Kovalenko</td></tr>
+<tr><td><a href="reports/2761010.pdf">Backprop to the Future: A Neural Network Approach to Linguistic Change over Time</a></td><td>Dai Shen / Michael Xing / Eun Seo Jo</td></tr>
+
+</table>
+</div>
+
+<!-- ----------------------------------------- -->
+
+<div class="container sec">
+<h3>Default Final Projects</h3>
+<table class="table">
+  <tr class="active">
+    <th>Project Name</th><th>Authors</th>
+  </tr>
+<tr><td><a href="reports/2718305.pdf">Natural Language Processing with Deep Learning Reading Comprehension</a></td><td>Wissam Baalbaki / Dan Zylberglejd</td></tr>
+<tr><td><a href="reports/2731322.pdf">Reading Comprehension</a></td><td>Vishakh Hegde</td></tr>
+<tr><td><a href="reports/2731391.pdf">Reading Comprehension on SQuAD Dataset</a></td><td>Andrew Nicholas Declerck / Kevin Thomas Rakestraw</td></tr>
+<!-- <tr><td><a href="reports/2731406.pdf">Machine Comprehension</a></td><td>Feili Hou / Yonghong Wang</td></tr> -->
+<tr><td><a href="reports/2731415.pdf">Dynamic Coattention with Sentence Information</a></td><td>Alex Heneghan Ruch</td></tr>
+<!-- <tr><td><a href="reports/2736584.pdf">Reading Comprehension</a></td><td>Marcus Csaky</td></tr> -->
+<!-- <tr><td><a href="reports/2736882.pdf">SimpleBiDAF</a></td><td>Nolan Jabs Walsh</td></tr> -->
+<tr><td><a href="reports/2736977.pdf">Reading Comprehension On SQuAD Using Tensorflow</a></td><td>Micah Daniel Silberstein / Chase Brandon / Michael Holloway</td></tr>
+<tr><td><a href="reports/2737321.pdf">#SQuADGoals: A Comparative Analysis of Models for Closed Domain Question Answering</a></td><td>Eric Mutua Musyoka / Andrew Elijah Duffy / Dan Michael Shiferaw</td></tr>
+<tr><td><a href="reports/2737388.pdf">Reading Comprehension with Coattention Encoders</a></td><td>Chan Lee / Jae Hyun Kim</td></tr>
+<tr><td><a href="reports/2737751.pdf">Neural Question Answer Systems: Biased Perspectives and Joint Answer Predictions.</a></td><td>Nick Paul Troccoli / Lucy L. Wang / Sam Redmond</td></tr>
+<tr><td><a href="reports/2737787.pdf">An exploration of Approaches for the Stanford Question Answering Dataset</a></td><td>Charles Chen</td></tr>
+<tr><td><a href="reports/2737807.pdf">Question Answering on the SQuAD Dataset</a></td><td>Moosa Hasan Zaidi / Nawaf Adel Alnaji</td></tr>
+<tr><td><a href="reports/2737821.pdf">Question Answering</a></td><td>Jacob Elias Perricone / Blake Jennings</td></tr>
+<tr><td><a href="reports/2740217.pdf">Question Answering on the SQuAD Dataset</a></td><td>Dangna Li</td></tr>
+<tr><td><a href="reports/2743622.pdf">Neural tetworks for text-based answer extraction</a></td><td>Brian Russell Hicks</td></tr>
+<tr><td><a href="reports/2743745.pdf">Dynamic Coattention Networks for Reading Comprehension</a></td><td>Hayk Tepanyan</td></tr>
+<tr><td><a href="reports/2745076.pdf">Bifocal Perspectives for Machine Comprehension</a></td><td>Andrew Shao-Chong Lim / Adam Muhannad Abdulhamid / Pavitra Tirumanjanam Rengarajan</td></tr>
+<tr><td><a href="reports/2745285.pdf">Building upon Multi-Perspective Matching for SQuAD</a></td><td>Louis Yvan Duperier / Yoann Le Calonnec</td></tr>
+<tr><td><a href="reports/2746011.pdf">Recurrent Neural Networks and Machine Reading Comprehension</a></td><td>Hana Lee</td></tr>
+<tr><td><a href="reports/2748340.pdf">Match LSTM based Question Answering </a></td><td>Hershed Tilak / Yangyang Yu / Michael Cannon Lowney</td></tr>
+<tr><td><a href="reports/2748543.pdf">Exploration and Analysis of Three Neural Network Models for Question Answering</a></td><td>William Jiang</td></tr>
+<tr><td><a href="reports/2748559.pdf">Question Answering on the SQuAD Dataset</a></td><td>Mudit Jain</td></tr>
+<tr><td><a href="reports/2748567.pdf">Question Answering</a></td><td>Peeyush Agarwal</td></tr>
+<tr><td><a href="reports/2748607.pdf">Harder Learning: Improving on Dynamic Co-Attention Networks for Question-Answering with Bayesian Approximations</a></td><td>Marcus Vincent Gomez / Brandon Bicheng Cui / Udai Baisiwala</td></tr>
+<tr><td><a href="reports/2748634.pdf">Extractive Question Answering Using Match-LSTM and Answer Pointer</a></td><td>Jake Alexander Rachleff / Cameron John Van De Graaf / Alexander Haigh</td></tr>
+<tr><td><a href="reports/2748641.pdf">SQuAD Question Answering Problem: A match-lstm implementation</a></td><td>Philippe Fraisse</td></tr>
+<tr><td><a href="reports/2748656.pdf">Implementation and Improvement of Match-LSTM in Question-Answering System</a></td><td>Ben Zhang / Haomin Peng</td></tr>
+<tr><td><a href="reports/2748657.pdf">Coattention-Based Multi-Perspective Matching Network for Machine Comprehension</a></td><td>Qiujiang Jin / Bowei Ma</td></tr>
+<tr><td><a href="reports/2748660.pdf">Deep Question Answering using Bi-directional Attention-based LSTMs and Weighted Distribution Penalization</a></td><td>Akhil Prakash / Pranav Ananth Sriram / Vineet Ahluwalia</td></tr>
+<tr><td><a href="reports/2748690.pdf">Deep Learning for Question Answering on the SQUAD</a></td><td>Reza Takapoui / Ramtin Keramati / Kian Kevin Katanforoosh</td></tr>
+<tr><td><a href="reports/2748727.pdf">SQuAD Reading Comprehension with Attention</a></td><td>Austin Hou</td></tr>
+<tr><td><a href="reports/2748739.pdf">An LSTM Attention-based Network for Reading Comprehension</a></td><td>Rafa Goissis Setra</td></tr>
+<tr><td><a href="reports/2749028.pdf">Question Answering on the SQuAD Dataset</a></td><td>Brad Garrison Girardeau</td></tr>
+<!-- <tr><td><a href="reports/2749090.pdf">Adventures in Machine Comprehension for the SQuAD Dataset</a></td><td>Ansh Shukla</td></tr> -->
+<!-- <tr><td><a href="reports/2749096.pdf">Sequence Attention for Reading Comprehension</a></td><td>Christopher Scott Kurrus</td></tr> -->
+<tr><td><a href="reports/2749099.pdf">Question Answering on SQuAD</a></td><td>Haque Muhammad Ishfaq / Chenjie Yang</td></tr>
+<tr><td><a href="reports/2749829.pdf">Question Answering with Deep Learning</a></td><td>Tristan Drake Mcrae</td></tr>
+<!-- <tr><td><a href="reports/2750120.pdf">Question Answering on the SQuAD Dataset</a></td><td>Fon Tran</td></tr> -->
+<!-- <tr><td><a href="reports/2750313.pdf">Question Answering on the SQuAD Dataset</a></td><td>Jing Miao / Nan Bi</td></tr> -->
+<!-- <tr><td><a href="reports/2754556.pdf">A menage-a-trois hyper perceptual neural network</a></td><td>Romain Sauvestre / Charles Bournhonesque / Olivier Moindrot</td></tr> -->
+<!-- <tr><td><a href="reports/2755558.pdf">Question Answering on the SQuAD Dataset</a></td><td>Alon Edward Devorah</td></tr> -->
+<!-- <tr><td><a href="reports/2755705.pdf">Question Answering on the SQuAD Dataset</a></td><td>Shawn Xu</td></tr> -->
+<tr><td><a href="reports/2757765.pdf">Understanding Multi-Perspective Context Matching for Machine Comprehension</a></td><td>Cindy Catherine Orozco Bohorquez</td></tr>
+<tr><td><a href="reports/2758309.pdf">Machine Comprehension Using Multi-Perspective Context Matching and Co-Attention</a></td><td>Tarun Gupta / Andrei Bajenov</td></tr>
+<tr><td><a href="reports/2758402.pdf">Question Answering Using Bi-Directional RNN</a></td><td>Aojia Zhao / Simon Kim</td></tr>
+<tr><td><a href="reports/2758649.pdf">Reading Comprehension with SQuAD</a></td><td>Archa Jain</td></tr>
+<tr><td><a href="reports/2758981.pdf">Reading Comprehension</a></td><td>Clare Chen / Kevin Rui Luo</td></tr>
+<tr><td><a href="reports/2759044.pdf">Exploring Different Matching/Attention Mechanism for Machine Comprehension Task on SQuAD Dataset</a></td><td>George Pakapol Supaniratisai / Nattapoom Asavareongchai</td></tr>
+<!-- <tr><td><a href="reports/2759093.pdf">Reading Comprehension for Effective Question Answering</a></td><td>Mohamad Alkhoujeh / Benjamin Share / Audrey Ho</td></tr> -->
+<tr><td><a href="reports/2759239.pdf">Implementation of Multi-Perspective Context Matching for Machine Comprehension</a></td><td>Wen Yau Aaron Loh</td></tr>
+<tr><td><a href="reports/2759307.pdf">Question Answering with SQuAD: Variations on Multi-Perspective Context Matching</a></td><td>Jason Freeman / Raine Morgan Hoover</td></tr>
+<tr><td><a href="reports/2759357.pdf">Reading Comprehension</a></td><td>Jason Liu / Christina Kao / Christopher Vo</td></tr>
+<tr><td><a href="reports/2759488.pdf">A Convolution Network Approach to Machine Comprehension</a></td><td>Lisa Yan</td></tr>
+<!-- <tr><td><a href="reports/2759524.pdf">Reading Comprehension-based Question Answering System</a></td><td>Yi Feng</td></tr> -->
+<tr><td><a href="reports/2759798.pdf">Deep Coattention Networks for Reading Comprehension</a></td><td>Amy Lawson Bearman</td></tr>
+<tr><td><a href="reports/2760003.pdf">Reading Comprehension</a></td><td>Ryan Patrick Burke / Leah Lynn Brickson / Alexandre Robicquet</td></tr>
+<tr><td><a href="reports/2760269.pdf">Machine Comprehension using Dynamic Recurrent Neural Network and Gated Recurrent Unit</a></td><td>Yi-Hong Kuo / Hsin-Ya Lou / Hsiang-Yu Yang</td></tr>
+<tr><td><a href="reports/2760290.pdf">Neural Network-based Question Answering System</a></td><td>Sriraman Madhavan / Sanyam Mehra / Kushaagra Goyal</td></tr>
+<tr><td><a href="reports/2760347.pdf">Rolling Deep with the SQuAD: Question Answering</a></td><td>Tanuj Thapliyal / Dhruv Amin / Reid Westwood</td></tr>
+<tr><td><a href="reports/2760414.pdf">Question Answering with Multi-Perspective Context Matching</a></td><td>Joey William Blackshaw Asperger</td></tr>
+<!-- <tr><td><a href="reports/2760435.pdf">Question Answering with Attention and Boundary Pointers</a></td><td>Tal Stramer</td></tr> -->
+<tr><td><a href="reports/2760452.pdf">Exploration of Attention in Question Answering</a></td><td>Anthony Perez</td></tr>
+<tr><td><a href="reports/2760458.pdf">Machine Comprehension with Exploration on Attention Mechanism</a></td><td>Chen Guo</td></tr>
+<tr><td><a href="reports/2760520.pdf">Machine Comprehension with Modified Bi-Directional Attention Flow Network</a></td><td>Mingxiang Chen / Sijun He / Jiajun Sun</td></tr>
+<tr><td><a href="reports/2760537.pdf">Reading Comprehension</a></td><td>Joris Van Mens / Nickolas Samuel Westman / Ilya Kuleshov</td></tr>
+<tr><td><a href="reports/2760668.pdf">Random Coattention Forest for Question Answering</a></td><td>Yi-Chun Chen / Ting-Po Lee / Jheng-Hao Chen</td></tr>
+<tr><td><a href="reports/2760708.pdf">Decoding Coattention Encodings for Question Answering</a></td><td>Qandeel Tariq / John Wang Clow / Alex Kolchinski</td></tr>
+<tr><td><a href="reports/2760710.pdf">Multi-Perspective Context Matching for SQuAD Dataset</a></td><td>Huizi Mao / Xingyu Liu</td></tr>
+<tr><td><a href="reports/2760713.pdf">Improving Match-LSTM for Machine Comprehension</a></td><td>Mike Yu / Kevin Foschini Moody / Dennis Xu</td></tr>
+<tr><td><a href="reports/2760748.pdf">SQuAD Reading Comprehension Learning</a></td><td>Thomas Pascal Jean Ayoul / Sebastien Nathan Raphael Levy</td></tr>
+<!-- <tr><td><a href="reports/2760757.pdf">Implementation of Attention Models for Reading Comprehension</a></td><td>Minymoh Etche Anelone / Megan Diane Mcandrews</td></tr> -->
+<tr><td><a href="reports/2760761.pdf">Exploring Deep Learning Models for Machine Comprehension on SQuAD</a></td><td>Joseph Kuruvilla Charalel / Yifei Feng / Junjie Zhu</td></tr>
+<tr><td><a href="reports/2760773.pdf">Reading Comprehension</a></td><td>Suraj Heereguppe Radhakrishna / Chiraag Sumanth / Jayanth Ramesh</td></tr>
+<!-- <tr><td><a href="reports/2760779.pdf">Reading Comprehension on the Stanford Question Answering Dataset</a></td><td>Charlotte Munger, Cody William Stocker</td></tr> -->
+<!-- <tr><td><a href="reports/2760899.pdf">Question Answering on the SQuAD Dataset</a></td><td>Silu Tang</td></tr> -->
+<tr><td><a href="reports/2760911.pdf">Simple Dynamic Coattention Networks</a></td><td>Wenqi Wu</td></tr>
+<!-- <tr><td><a href="reports/2760934.pdf">Attentive Reader Inspired Model for Question Answering</a></td><td>Kunmi Oluwafemi Jeje / Fei "frank" Yang</td></tr> -->
+<!-- <tr><td><a href="reports/2760951.pdf">Reading Comprehension</a></td><td>Andrew Stirn</td></tr> -->
+<tr><td><a href="reports/2760960.pdf">Question Answering Using Regularized Match-LSTM and Answer Pointer</a></td><td>Debnil Arindam Sur / Ellen Lindsey Blaine</td></tr>
+<tr><td><a href="reports/2760974.pdf">Extending Match-LSTM</a></td><td>Keegan Rochard Mosley / Sebastian Goodman</td></tr>
+<tr><td><a href="reports/2760980.pdf">Global Span Representation Model for Machine Comprehension on SQuAD</a></td><td>Sunmi Lee / Jaebum Lee</td></tr>
+<tr><td><a href="reports/2760988.pdf">BiDAF Model for Question Answering</a></td><td>Genki Kondo / Ramon Tuason / Daniel Grazian</td></tr>
+<tr><td><a href="reports/2761002.pdf">A new model for Machine Comprehension via multi-perspective context matching and bidirectional attention flow</a></td><td>Nima Hamidi / Amirata Ghorbani</td></tr>
+<tr><td><a href="reports/2761004.pdf">Co-Attention with Answer-Pointer for SQuAD Reading Comprehension Task</a></td><td>Mindy Lea Yang / Tommy Fan / Chenyao Yu</td></tr>
+<!-- <tr><td><a href="reports/2761031.pdf">An Attentive Model for Automated Question Answering</a></td><td>Prasanna Ramakrishnan</td></tr> -->
+<tr><td><a href="reports/2761032.pdf">Reading Comprehension on SQuAD</a></td><td>Meghana Vijay Rao / Brexton Pham / Zachary Davis Taylor</td></tr>
+<!-- <tr><td><a href="reports/2761034.pdf">Multi-Perspective Matching with Augmented Contexts</a></td><td>Evan Zheran Liu / Brendon Di Go</td></tr> -->
+<tr><td><a href="reports/2761042.pdf">Coattention Answer-Pointer Networks for Question Answering</a></td><td>Yanshu Hong / Tian Zhao / Yiju Hou</td></tr>
+<tr><td><a href="reports/2761054.pdf">Coattention Model for Question Answering</a></td><td>Marie Eve Vachovsky / Tina Ivy Vachovsky</td></tr>
+<tr><td><a href="reports/2761057.pdf">Modular Sequence Attention Mix Model</a></td><td>Ahmed Hussain Jaffery / Kostya Sebov</td></tr>
+<tr><td><a href="reports/2761063.pdf">Question Answering Using Match-LSTM and Answer Pointer</a></td><td>Brandon Chauloon Yang / Cindy Wang / Annie Hu</td></tr>
+<tr><td><a href="reports/2761065.pdf">SQuAD Question Answering using Multi-Perspective Matching</a></td><td>Shloka Mitesh Desai / Sheema Usmani / Zach Daniel Maurer</td></tr>
+<tr><td><a href="reports/2761073.pdf">Relevancy-Scaled Deep Co-Attentive Networks for Question Answering</a></td><td>Varun Abhijit Gupta / Orry Chris Despo / Nadav Aharon Hollander</td></tr>
+<tr><td><a href="reports/2761077.pdf">A simple sequence attention model for machine comprehension</a></td><td>Marcello Mendes Hasegawa</td></tr>
+<!-- <tr><td><a href="reports/2761105.pdf">Reading Comprehension</a></td><td>Albert Chu</td></tr> -->
+<tr><td><a href="reports/2761106.pdf">Question Answering with Recurrent Span Representations</a></td><td>Timothy Man Hay Lee / Kevin Xinzhi Wu / John Louie</td></tr>
+<!-- <tr><td><a href="reports/2761112.pdf">The Graduate SQuAD</a></td><td>Toki Migimatsu / Ryan Mallory</td></tr> -->
+<tr><td><a href="reports/2761120.pdf">Question Answering on the SQuAD Dataset with Part-of-Speech Tagging</a></td><td>Nancy Xu / Philip Ken-Ka Hwang / Joan Creus-Costa</td></tr>
+<tr><td><a href="reports/2761124.pdf">NQSotA Continuation Curriculum Learning with Question Answering on the SQuAD Dataset</a></td><td>Rahul Sunil Palamuttam / Luke Taylor Johnston / William Chen</td></tr>
+<tr><td><a href="reports/2761126.pdf">CS 224N Assignment 4: Question Answering on SQuAD</a></td><td>Kevin Matthew Garbe / Aykan Ozturk / Huseyin Atahan Inan</td></tr>
+<!-- <tr><td><a href="reports/2761131.pdf">Mixing Bidirectional Attentioning and Multi-perspective Matching for Question Answering</a></td><td>Pedro Pablo Garzon / Sam Lowenmann Wood</td></tr> -->
+<tr><td><a href="reports/2761153.pdf">Seq2seq-Attention Question Answering Model</a></td><td>Wenqi Hou / Yun Nie</td></tr>
+<tr><td><a href="reports/2761184.pdf">Question Answering on the SQuAD Dataset Using Multi-Perspective Context Matching</a></td><td>Sam Edward Herbert Colbran / Stanislav Fort</td></tr>
+<tr><td><a href="reports/2761185.pdf">Bidirectional Attention Flow Model for Reading Comprehension</a></td><td>Michael Painter / Bardia Beigi / Soroosh Hemmati</td></tr>
+<tr><td><a href="reports/2761187.pdf">Maching Comprehension using SQuAD and Deep Learning</a></td><td>Josh Robert King / Filippo Ranalli / Ajay Uday Mandlekar</td></tr>
+<tr><td><a href="reports/2761209.pdf">Machine Comprehension with MMLSTM and Clustering</a></td><td>Frank Anthony Cipollone / Zachary Barnes / Tyler Romero</td></tr>
+<tr><td><a href="reports/2761214.pdf">Dynamic Coattention Networks with Encoding Maxout</a></td><td>Morgan Lee Tenney / Thaminda Mewan Edirisooriya / Hansohl Eliott Kim</td></tr>
+<tr><td><a href="reports/2761218.pdf">Implementation and New Variants Exploration of the Multi-Perspective Context Matching Deep Neural Network Model for Machine Comprehension</a></td><td>Yutong Li / Prateek Murgai</td></tr>
+<tr><td><a href="reports/2761224.pdf">Attention-based Recurrent Neural Networks for Question Answering</a></td><td>Dapeng Hong / Billy Wan</td></tr>
+<tr><td><a href="reports/2761227.pdf">Co-Dependent Attention on SQuAD</a></td><td>Siyue Wu / Fabian Chan / Xueyuan Mei</td></tr>
+<tr><td><a href="reports/2761241.pdf">Start and End Interactions in Bidirectional Attention Flow for Reading Comprehension</a></td><td>Sean Thomas Rafferty / Ted Harbin Li</td></tr>
+<tr><td><a href="reports/2761817.pdf">Implementing Multi-Perspective Context Matching for the SQuAD Task in TensorFlow</a></td><td>Christopher Michael Pesto</td></tr>
+<tr><td><a href="reports/2761823.pdf">CAESAR: Context-Awareness Enabled and Summary-Attentive Reader</a></td><td>Kshitiz Tripathi / Long-Huei Chen / Mario Sergio Rodriguez</td></tr>
+<tr><td><a href="reports/2761833.pdf">Ensemble Learning For Machine Comprehension: Bidirectional Attention Flow Models</a></td><td>Divya Shree Saini / Stephen Ou / William Adams Du</td></tr>
+<!-- <tr><td><a href="reports/2761834.pdf">CS 224N SQuAD Final Report</a></td><td>Philippe Gabriel Souza Moraes Ribeiro / Julian Gao / Bonnie Rose Nortz</td></tr> -->
+<tr><td><a href="reports/2761845.pdf">An End-to-End Neural Architecture for Reading Comprehension</a></td><td>Ned Joseph Danyliw / Miguel Sebastian Camacho-Horvitz / Meredith Noelani Burkle</td></tr>
+<tr><td><a href="reports/2761853.pdf">Neural Methods for Question Answering</a></td><td>Ayush Kanodia / Manik Dhar / Pratyaksh Sharma</td></tr>
+<tr><td><a href="reports/2761882.pdf">Implementation and Analysis of Match-LSTM for SQuAD</a></td><td>Michael Graczyk</td></tr>
+<!-- <tr><td><a href="reports/2761888.pdf">Machine Comprehension with Variants on Bilinear Annotation Re-Encoding Boundary (BARB) Model</a></td><td>David Golub / yang li / Charles Lu</td></tr> -->
+<tr><td><a href="reports/2761890.pdf">Multiple Turn Comprehension for the BiDirectional Attention Flow Model</a></td><td>Thomas Liu</td></tr>
+<tr><td><a href="reports/2761899.pdf">Question Answering on the SQuAD Dataset</a></td><td>Do-Hyoung Park / Vihan Sankaran Lakshman</td></tr>
+<!-- <tr><td><a href="reports/2761903.pdf">Exploration of Machine Reading Comprehension</a></td><td>Nathan O'rourke Butler / Cheenar Banerjee / Patricia Cristina Perozo</td></tr> -->
+<tr><td><a href="reports/2761922.pdf">Answering SQuAD</a></td><td>Faraz Waseem / Atishay Jain</td></tr>
+<!-- <tr><td><a href="reports/2761929.pdf">Question Answering on the SQuAD Dataset</a></td><td>Paul William Steenkiste</td></tr> -->
+<!-- <tr><td><a href="reports/2761945.pdf">Question Answering System</a></td><td>Lu Bian / Zhongjie Li / Xuandong Lei</td></tr> -->
+<tr><td><a href="reports/2761956.pdf">Game, Set, Match-LSTM: Question Answering on SQuAD</a></td><td>Eric Osemen Ehizokhale / Ian Narciso Torres</td></tr>
+<tr><td><a href="reports/2761987.pdf">Bidirectional LSTM-RNN with Bi-Attention for reading comprehension</a></td><td>Guoxi Xu / Bera Shi / Ziyi Yang</td></tr>
+<tr><td><a href="reports/2761993.pdf">Filter-Context Dynamic Coattention Networks for Question Answering</a></td><td>Yangxin Zhong / Jian Huang / Peng Yuan</td></tr>
+<tr><td><a href="reports/2761994.pdf">Question Answering System using Dynamic Coattention Networks</a></td><td>Adeline Emily Wong / Bojiong Ni / James Shi</td></tr>
+<tr><td><a href="reports/2761996.pdf">Machine Question and Answering</a></td><td>Diana Dan Khanh Le / Malina Jiang / Joseph Chang</td></tr>
+<!-- <tr><td><a href="reports/2761997.pdf">This Title is Begging for Attention</a></td><td>Niranjan Balachandar</td></tr> -->
+<tr><td><a href="reports/2762000.pdf">Question Answering on the SQuAD Dataset</a></td><td>Saghar Hosseinisianaki / Yun Yun Li</td></tr>
+<tr><td><a href="reports/2762029.pdf">Learning Reading Comprehension with Neural Nets</a></td><td>Jason Huang / Li Cai / Charles Huyi</td></tr>
+<tr><td><a href="reports/2762032.pdf">Convolutional Encoding in Bidirectional Attention Flow for Question Answering</a></td><td>Daniel Roy Miller</td></tr>
+<tr><td><a href="reports/2762037.pdf">Incorporating Part-of-Speech tags and Named Entities into Match-LSTM</a></td><td>Raunak Kasera / Dilsher Ahmed</td></tr>
+<!-- <tr><td><a href="reports/2762039.pdf">Reading Comprehension using Modified Match-LSTM</a></td><td>Jeremy David Wood / Shubha Srinivas Raghvendra / Edwin Sewon Park</td></tr> -->
+<tr><td><a href="reports/2762048.pdf">Reading Comprehension with Deep Learning</a></td><td>Atticus Reed Geiger / Dylan Ziqing Liu</td></tr>
+<!-- <tr><td><a href="reports/2762049.pdf">Reading Comprehension</a></td><td>Bogdan Burlacu</td></tr> -->
+<tr><td><a href="reports/2762052.pdf">Unilateral Multi-Perspective Matching for Machine Comprehension</a></td><td>Max Calvin Schorer / Jason Wang / Sigberto Viesca</td></tr>
+<tr><td><a href="reports/2762061.pdf">Question Answering on the SQuAD Dataset</a></td><td>Xin Jin / Milind Mukesh Rao / Abbas Kazerouni</td></tr>
+<tr><td><a href="reports/2762075.pdf">Reading Comprehension on the Stanford Question Answering Dataset</a></td><td>Shashwat Udit</td></tr>
+<tr><td><a href="reports/2762097.pdf">Machine Comprehension for SQuAD dataset</a></td><td>Vikas R Bahirwani / Erika Debra Menezes</td></tr>
+<!-- <tr><td><a href="reports/2762098.pdf">Question/Answer system with Attention Mechanism</a></td><td>Cherif Jazra</td></tr> -->
+<!-- <tr><td><a href="reports/2762101.pdf">SQuAD Reading Comprehension Challenge</a></td><td>Jess Larissa Moss / Charles Akin-David / Aarush Selvan</td></tr> -->
+<!-- <tr><td><a href="reports/2762103.pdf">Chainable Co-attention Networks</a></td><td>Ed Ng</td></tr> -->
+<tr><td><a href="reports/2762106.pdf">Machine Comprehension with Deep Learning on SQuAD dataset</a></td><td>Neha Gupta / Yianni Dimitrios Laloudakis / Yash Vyas</td></tr>
+<!-- <tr><td><a href="reports/2762107.pdf">Question Answering on the SQuAD Dataset</a></td><td>Jordan Duprey</td></tr> -->
+<!-- <tr><td><a href="reports/2775380.pdf">Question Answering with Attention-Based Networks</a></td><td>Daniel Stephen Gardner / David Andrew Nichols</td></tr> -->
+<!-- <tr><td><a href="reports/2788608.pdf">Reading Comprehension: Predictive Question Answering Model</a></td><td>Christophoros Antoniades / Kevin Poulet</td></tr> -->
+<!-- <tr><td><a href="reports/2801279.pdf">NLP Conditional Understanding with Squad Task</a></td><td>Liz Howe</td></tr> -->
+
+</table>
+</div>
+<!-- jQuery and Boostrap -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>

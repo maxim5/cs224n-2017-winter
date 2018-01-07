@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CS224n: Natural Language Processing with Deep Learning</title>
+
+  <!-- bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+  <!-- Google fonts -->
+  <link href='http://fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
+
+  <!-- Google Analytics -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-60458624-1', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+
+  <link rel="stylesheet" type="text/css" href="style.css" />
+
+</head>
+
+<body>
+
+<div id="header">
+  <a href="http://nlp.stanford.edu/">
+    <img src="http://nlp.stanford.edu/sentiment/images/nlp-logo.gif" style="height:50px; float: left; margin-left: 20px;">
+  </a>
+  <h1>CS224n: Natural Language Processing with Deep Learning</h1>
+  <div style="clear:both;"></div>
+</div>
+
+
+<div id="teaser">
+  <img src="images/treeFrontSentiment.png">
+</div>
+
+<div style="text-align:center; padding:40px 0px 40px 0px;">
+
+    <!-- <button type="button" class="btn btn-success btn-lg">Course Notes (updated each week)</button> -->
+  <a href="syllabus.html">
+    <button type="button" class="btn btn-success btn-lg">Syllabus (Slides, etc.)</button>
+  </a>
+
+  <a href="https://www.youtube.com/playlist?list=PL3FW7Lu3i5Jsnh1rnUwq_TcylNr7EkRe6">
+    <button type="button" class="btn btn-warning btn-lg">Public Lecture Videos</button>
+  </a>
+
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+  <a href="https://calendar.google.com/calendar/embed?src=fbh70777n3qjbdv18o4mra91is%40group.calendar.google.com&ctz=America/Los_Angeles">
+    <button type="button" class="btn btn-info btn-lg">Calendar</button>
+  </a>
+
+  <a href="https://mvideox.stanford.edu/Course/848">
+    <button type="button" class="btn btn-primary btn-lg">Stanford Lecture Videos</button>
+  </a>
+
+  <a href="https://piazza.com/class/iw9g8b9yxp46s8">
+    <button type="button" class="btn btn-danger btn-lg">Piazza forum</button>
+  </a>
+</div>
+
+<div class="container sec">
+<h2>Announcements</h2>
+<table class="table">
+  <tr>
+    <ul>
+    <li>Final project papers and all prize winners are <a href="http://web.stanford.edu/class/cs224n/reports.html">posted</a>!</li>
+    <li>Lecture videos are <a href="https://www.youtube.com/playlist?list=PL3FW7Lu3i5Jsnh1rnUwq_TcylNr7EkRe6">online</a> now!</li>
+    </ul>
+  </tr>
+</table>
+</div>
+
+<div class="sechighlight">
+<div class="container sec">
+  <h2>Course Description</h2>
+  <div id="coursedesc">
+  Natural language processing (NLP) is one of the most important technologies of the information age. Understanding complex language utterances is also a crucial part of artificial intelligence. Applications of NLP are everywhere because people communicate most everything in language: web search, advertisement, emails, customer service, language translation, radiology reports, etc. There are a large variety of underlying tasks and machine learning models behind NLP applications.
+Recently, deep learning approaches have obtained very high performance across many different NLP tasks. These models can often be trained with a single end-to-end model and do not require traditional, task-specific feature engineering.
+In this winter quarter course students will learn to implement, train, debug, visualize and invent their own neural network models. The course provides a thorough introduction to cutting-edge research in deep learning applied to NLP.
+On the model side we will cover word vector representations, window-based neural networks, recurrent neural networks, long-short-term-memory models, recursive neural networks, convolutional neural networks as well as some recent models involving a memory component.
+Through lectures and programming assignments students will learn the necessary engineering tricks for making neural networks work on practical problems.
+<br>
+<br>
+
+This course is a merger of Stanford's previous cs224n course (<a href="https://web.stanford.edu/class/archive/cs/cs224n/cs224n.1162/">Natural Language Processing</a>) and cs224d (<a href="http://cs224d.stanford.edu/">Deep Learning for Natural Language Processing</a>).
+<br>
+<br>
+</div>
+
+<div>
+<table class="table">
+  <tr class="active">
+    <th>Past final projects</th>
+  </tr>
+  <tr>
+    <td> Previous cs224n Reports [<a href="http://nlp.stanford.edu/courses/cs224n/">link</a>] </td>
+  </tr>
+  <tr>
+    <td> Previous cs224d Reports [<a href="http://cs224d.stanford.edu/reports_2015.html">2015</a>] [<a href="http://cs224d.stanford.edu/reports_2016.html">2016</a>] </td>
+  </tr>
+</table>
+</div>
+
+</div>
+</div>
+
+<div class="container sec">
+<div class="row">
+  <div class="col-md-4">
+    <h2>Course Instructors</h2>
+    <div class="instructor">
+      <a href="http://nlp.stanford.edu/manning/">
+      <div class="instructorphoto"><img src="http://nlp.stanford.edu/manning/images/Christopher_Manning_027_1154x1154.jpg"></div>
+      <div>Chris Manning</div>
+      </a>
+    </div>
+    <div class="instructor">
+      <a href="http://socher.org">
+      <div class="instructorphoto"><img src="images/richard.png"></div>
+      <div>Richard Socher</div>
+      </a>
+    </div>
+  </div>
+  <div class="col-md-8">
+    <h2>Teaching Assistants</h2>
+    <div class="instructor">
+      <a href="http://cs.stanford.edu/~danqi/">
+      <div class="instructorphoto"><img src="images/danqi_chen.jpg"></div>
+      <div>Danqi Chen</div>
+      </a>
+    </div>
+    <div class="instructor">
+      <a href="http://arun.chagantys.org">
+      <div class="instructorphoto"><img src="images/arun_chaganty.jpg"></div>
+      <div>Arun Chaganty</div>
+      </a>
+    </div>
+    <div class="instructor">
+      <a href="http://cs.stanford.edu/~kevclark/">
+      <div class="instructorphoto"><img src="images/kevin_clark.png"></div>
+      <div>Kevin Clark</div>
+      </a>
+    </div>
+    <div class="instructor">
+      <a href="http://stanford.edu/~cases/">
+      <div class="instructorphoto"><img src="images/ignacio_cases.jpg"></div>
+      <div>Ignacio Cases</div>
+      </a>
+    </div>
+    <div class="instructor">
+      <a href="https://www.linkedin.com/in/kalpitdixit">
+      <div class="instructorphoto"><img src="images/kalpit_dixit.jpg"></div>
+      <div>Kalpit Dixit</div>
+    </div>
+    <div class="instructor">
+      <a href="http://web.stanford.edu/class/cs224n/">
+      <div class="instructorphoto"><img src="images/michael_fang.jpg"></div>
+      <div>Michael Fang</div>
+      </a>
+    </div>
+    <div class="instructor">
+      <a href="https://www.linkedin.com/in/guillaumegenthial">
+      <div class="instructorphoto"><img src="images/guillaume_genthial.jpg"></div>
+      <div>Guillaume Genthial</div>
+      </a>
+    </div>
+    <div class="instructor">
+      <a href="https://www.linkedin.com/in/jameshong1993">
+      <div class="instructorphoto"><img src="images/james_hong.jpg"></div>
+      <div>James Hong</div>
+      </a>
+    </div>
+    <div class="instructor">
+      <a href="https://www.linkedin.com/in/jade-huang-9a62306b">
+      <div class="instructorphoto"><img src="images/jade_huang.jpg"></div>
+      <div>Jade Huang</div>
+      </a>
+    </div>
+    <div class="instructor">
+      <a href="https://www.linkedin.com/in/nishith-khandwala-16b27227">
+      <div class="instructorphoto"><img src="images/nishith_khandwala.jpg"></div>
+      <div>Nishith Khandwala</div>
+      </a>
+    </div>
+    <div class="instructor">
+      <a href="https://www.linkedin.com/in/lucaszuozhenliu">
+      <div class="instructorphoto"><img src="images/lucas_liu.jpg"></div>
+      <div>Lucas Liu</div>
+      </a>
+    </div>
+    <div class="instructor">
+      <a href="https://www.linkedin.com/in/zhedi-liu-631b242b">
+      <div class="instructorphoto"><img src="images/zhedi_liu.jpg"></div>
+      <div>Zhedi Liu</div>
+      </a>
+    </div>
+    <div class="instructor">
+      <a href="https://www.linkedin.com/in/shayne-longpre-75609983">
+      <div class="instructorphoto"><img src="images/shayne_longpre.jpg"></div>
+      <div>Shayne Longpre</div>
+      </a>
+    </div>
+    <div class="instructor">
+      <a href="https://www.linkedin.com/in/zelunluo">
+      <div class="instructorphoto"><img src="images/alan_luo.jpg"></div>
+      <div>Alan Luo</div>
+      </a>
+    </div>
+    <div class="instructor">
+      <a href="https://www.linkedin.com/in/juhi-naik-52a15654">
+      <div class="instructorphoto"><img src="images/juhi_naik.jpg"></div>
+      <div>Juhi Naik</div>
+      </a>
+    </div>
+    <div class="instructor">
+      <a href="http://www.anie.me">
+      <div class="instructorphoto"><img src="images/allen_nie.jpg"></div>
+      <div>Allen Nie</div>
+      </a>
+    </div>
+    <div class="instructor">
+      <a href="https://www.linkedin.com/in/boshri">
+      <div class="instructorphoto"><img src="images/barak_oshri.jpg"></div>
+      <div>Barak Oshri</div>
+      </a>
+    </div>
+    <div class="instructor">
+      <a href="https://www.stanford.edu/~sunilpai">
+      <div class="instructorphoto"><img src="images/sunil_pai.jpg"></div>
+      <div>Sunil Pai</div>
+      </a>
+    </div>
+    <div class="instructor">
+      <a href="https://www.linkedin.com/in/amani-peddada-5a8322106">
+      <div class="instructorphoto"><img src="images/amani_peddada.jpg"></div>
+      <div>Amani Peddada</div>
+      </a>
+    </div>
+    <div class="instructor">
+      <a href="https://emmabypeng.github.io">
+      <div class="instructorphoto"><img src="images/emma_peng.jpg"></div>
+      <div>Emma Peng</div>
+      </a>
+    </div>
+    <div class="instructor">
+      <a href="https://www.linkedin.com/in/kushalranjan/">
+      <div class="instructorphoto"><img src="images/kushal_ranjan.jpg"></div>
+      <div>Kushal Ranjan</div>
+      </a>
+    </div>
+    <div class="instructor">
+      <a href="https://www.linkedin.com/in/ajay-sohmshetty-68566955">
+      <div class="instructorphoto"><img src="images/ajay_sohmshetty.jpg"></div>
+      <div>Ajay Sohmshetty</div>
+      </a>
+    </div>
+    <div class="instructor">
+      <a href="http://web.stanford.edu/~lisa1010/">
+      <div class="instructorphoto"><img src="images/lisa_wang.jpg"></div>
+      <div>Lisa Wang</div>
+      </a>
+    </div>
+    <div class="instructor">
+      <a href="https://www.linkedin.com/in/honghao-wei-25b5235a/">
+      <div class="instructorphoto"><img src="images/honghao_wei.jpg"></div>
+      <div>Honghao Wei</div>
+      </a>
+    </div>
+    <div class="instructor">
+      <a href="https://www.linkedin.com/in/qiaojing-yan-4534b9112">
+      <div class="instructorphoto"><img src="images/qiaojing_yan.jpg"></div>
+      <div>Qiaojing Yan</div>
+      </a>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="container sec">
+  <div class="row">
+    <div class="col-md-6">
+      <h2>Class Time and Location</h2>
+      Winter quarter (January - March, 2017)<br>
+      Lecture: Tuesday, Thursday 4:30-5:50<br>
+      Location: <a href="https://campus-map.stanford.edu/?srch=NVIDIA+Auditorium">NVIDIA Auditorium</a>
+    </div>
+    <!--div class="col-md-4">
+      <h2>Office Hours</h2>
+      <b>Richard</b>: Tue 4:30-6:30pm, Huang Basement<br>
+      (for research and project discussions)<br><br>
+      TAs:<br>
+       <b>David</b>: Mon 6:00-8:00pm, Huang 138<br>
+       <b>Bharath</b>: Teus 1:00-3:00pm, Huang Basement<br>
+       <b>James</b>: Wed, 5:30-7:30pm, Gates B26<br>
+       <b>Sameep</b>: Thur, 12:45-2:45pm, Gates B21<br>
+       <b>Naveen</b>: Fri, 1:00-3:00pm, Huang Basement<br>
+       <b>Qiaojing</b>: Sun, 4:00-6:00pm, Gates B24<br>
+    </div>-->
+
+    <!--
+    <div class="col-md-4">
+      <h2>Grading Policy</h2>
+      Assignment #1: 15%<br>
+      Assignment #2: 15%<br>
+      Assignment #3: 15%<br>
+      Midterm: 15%<br>
+      Final Project: 40%<br>
+    </div>
+    -->
+
+    <div class="col-md-6">
+      <h2>Grading Policy</h2>
+      See the <a href="grading.html">Grading Page</a> for more details on grading.
+    </div>
+  </div>
+</div>
+
+<div class="container sec">
+  <div class="row">
+    <!--div class="col-md-4">
+      <h2>Course Discussions</h2>
+      Stanford students: <a href="https://piazza.com/class/ilx0v32x8ce7dh">Piazza </a> (for Stanford students)
+      <br>
+      Online discussions: <a href="http://www.reddit.com/r/CS224d">Reddit Group </a> (for non-Stanford students)
+      <br>
+      Our Twitter account: <a href="https://twitter.com/cs224d">@CS224d</a>
+    </div-->
+    <div class="col-md-6">
+      <h2>Assignment Details</h2>
+      See the <a href="assignments.html">Assignments Page</a> for more details on how to hand in your assignments.
+    </div>
+    <div class="col-md-6">
+      <h2>Final Project Details</h2>
+      See the <a href="project.html">Project Page</a> for more details on the final project.
+    </div>
+    <!--div class="col-md-4">
+      <h2>Course Project Details</h2>
+      See the <a href="project.html">Project Page</a> for more details on the course project.
+    </div-->
+  </div>
+</div>
+<div class="container sec">
+  <div class="row">
+      <h2>Useful Reference Texts</h2>
+      <ul>
+      <li>Dan Jurafsky and James H. Martin. <i>Speech and Language Processing (3rd ed. draft)</i> [<a href="https://web.stanford.edu/~jurafsky/slp3/">link</a>]</li>
+      <li>Yoav Goldberg. <i>A Primer on Neural Network Models
+      for Natural Language Processing</i> [<a href="http://u.cs.biu.ac.il/~yogo/nnlp.pdf">link</a>]</li>
+
+      <li>Ian Goodfellow, Yoshua Bengio, and Aaron Courville. <i>Deep Learning</i>. MIT Press. [<a href="http://www.deeplearningbook.org/">link</a>]</li>
+      </ul>
+  </div>
+</div>
+
+<div class="sechighlight">
+<div class="container sec">
+  <h2>Prerequisites</h2>
+  <ul>
+    <li><span class="spanh">Proficiency in Python</span><br>All class assignments will be in Python (using numpy and tensorflow). There is a tutorial <a href="http://cs231n.github.io/python-numpy-tutorial/">here</a> for those who aren't as familiar with Python. If you have a lot of programming experience but in a different language (e.g. C/C++/Matlab/Javascript) you will probably be fine.</li>
+    <li><span class="spanh">College Calculus, Linear Algebra</span> (e.g. MATH 51, CME 100)<br> You should be comfortable taking derivatives and understanding matrix vector operations and notation.</li>
+    <li><span class="spanh">Basic Probability and Statistics</span> (e.g. CS 109 or other stats course)<br>You should know basics of probabilities, gaussian distributions, mean, standard deviation, etc.</li>
+    <li><span class="spanh">Foundations of Machine Learning</span><br> We will be formulating cost functions, taking derivatives and performing optimization with gradient descent. Either cs221 or cs229 cover this background. Some optimization tricks will be more intuitive with some knowledge of convex optimization.</li>
+  </ul>
+  <!--h2>Recommended</h2>
+  <ul>
+    <li><span class="spanh">Convex optimization</span><br> You may find some of the optimization tricks more intuitive with this background.</li>
+    <li><span class="spanh">Knowledge of convolutional neural networks (CS231n)</span><br>The first problem set will probably be easier for you. We cannot assume you took this class so there will be ~3 lectures that overlap in content. You can use that time to dive deeper into some aspects. </li>
+  </ul-->
+</div>
+</div>
+
+<div class="container sec">
+  <h2>FAQ</h2>
+  <div class="qqa">
+    <div class="qq">Is this the first time this class is offered?</div>
+    <div class="qa">
+    No, but this is a "new version" of the course merging in ideas from <a href="http://cs224d.stanford.edu/">CS224D</a>. It will cover the range of natural language processing from previous iterations of 224N but will primarily use the technique of neural networks / deep learning / differentiable programming to build solutions.
+    </div>
+  </div>
+  <div class="qqa" id="outside">
+    <div class="qq">Can I follow along from the outside?</div>
+    <div class="qa">We'd be happy if you join us! We plan to make the course materials widely available: <b>The assignments, course notes and slides will be available online.</b> We plan to make videos publicly available, but need to wait until after they have been subtitled (ADA), made FERPA-compliant, checked for copyright, etc. This will take some time. Thanks for you patience. We won't be able to give you course credit.</div>
+  </div>
+  <div class="qqa">
+    <div class="qq">Can I take this course on credit/no cred basis?</div>
+    <div class="qa">Yes. Credit will be given to those who would have otherwise earned a C- or above.</div>
+  </div>
+  <div class="qqa">
+    <div class="qq">Can I audit or sit in?</div>
+    <div class="qa">In general we are very open to sitting-in guests if you are a member of the Stanford community (registered student, staff, and/or faculty). Out of courtesy, we would appreciate that you first email us or talk to the instructor after the first class you attend.</div>
+  </div>
+  <div class="qqa">
+    <div class="qq">Can I work in groups for the Final Project?</div>
+    <div class="qa">Yes, in groups of up to three people.</div>
+  </div>
+  <div class="qqa">
+    <div class="qq">I have a question about the class. What is the best way to reach the course staff?</div>
+    <div class="qa">Stanford students please use an internal class forum on
+    Piazza so that other students may benefit from your questions and our
+    answers. If you have a personal matter, email us at the class mailing
+    list <b>cs224n-win1617-staff@lists.stanford.edu</b>.</div>
+  </div>
+  <!--div class="qqa">
+    <div class="qq">Can I combine the Final Project with another course?</div>
+    <div class="qa">Yes, you may. There are a couple of courses concurrently offered with CS224d that are natural choices, such as CS224u (Natural Language Understanding, by Prof. Chris Potts and Bill MacCartney). If you are taking a related class, please speak to the instructors to receive permission to combine the Final Project assignments.</div>
+  </div-->
+
+  <div class="qqa">
+    <div class="qq">As an SCPD student, how do I make up for poster presentation component?</div>
+    <div class="qa">For the final poster presentation you can submit a video via youtube about your project.</div>
+  </div>
+  <div class="qqa">
+    <div class="qq">As an SCPD student, how do I take the midterm?</div>
+    <div class="qa">For the midterm, we can use standard SCPD procedures of having your manager or somebody at your company monitor you during the exam.</div>
+  </div>
+  <div class="qqa">
+    <div class="qq">Will there be virtual office hours for SCPD students</div>
+    <div class="qa">All office hours will be accesible on google hangouts. The link to the hangout is available on piazza</div>
+  </div>
+</div>
+
+<div class="sechighlight">
+<div id="footer">
+
+
+
+  <div id="classicons">
+    Webdesign by Andrej Karpathy
+  </div>
+
+</div>
+</div>
+
+<!-- jQuery and Boostrap -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>

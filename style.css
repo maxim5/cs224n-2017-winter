@@ -1,0 +1,153 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+}
+#header {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+#teaser {
+  height: 410px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 3px;
+  padding-right: 3px;
+  background-color: #8C1515;
+  position: relative;
+  overflow: hidden;
+  color: white;
+  font-size: 16px;
+  text-align: center;
+}
+
+ #teaser img {
+  max-width: 90%;
+  height: auto;
+  max-height: 90%;
+}
+
+h1 {
+  font-size: 30px;
+  font-weight: 300;
+  text-align: center;
+}
+h2 {
+  font-size: 25px;
+  font-weight: 300;
+}
+.lhead {
+  font-weight: normal;
+  margin-top: 5px;
+}
+.litem {
+  margin-top: 5px;
+}
+#footer {
+  height: 250px;
+  padding-top: 50px;
+  text-align: center;
+  position: relative;
+}
+.instructorphoto img {
+  width: 120px;
+  border-radius: 100px;
+  margin-bottom: 10px;
+}
+
+.instructor {
+  display: inline-block;
+  width: 120px;
+  text-align: center;
+  margin-right: 20px;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+.sec {
+  margin-bottom: 10px;
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+.tt {
+  color: #060;
+  display: inline-block;
+}
+
+#inputlayer {
+  width: 65px;
+}
+.layer {
+  width: 35px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 10px;
+  margin-bottom: 5px;
+}
+.actmap {
+  display: block;
+  border: 2px solid #FFF;
+}
+#convnetvis {
+  text-align: center;
+}
+#probsdiv {
+
+}
+.pp {
+  color: white;
+  text-align: left;
+  padding: 5px;
+  height: 32px;
+  margin: 2px;
+  background-color: rgb(85,187,85);
+  overflow: visible !important;
+}
+
+#convask {
+  position: absolute;
+  top: 360px;
+  right: 16px;
+  color: white;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+#explain {
+  display: none;
+  background-color: #FF9;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 10px;
+}
+.qq {
+  color: #060;
+}
+.qa {
+  font-style: italic;
+}
+.qqa {
+  margin-bottom: 20px;
+}
+.spanh {
+  font-weight: normal;
+}
+.sechighlight {
+  background-color: #f7f6f1;
+}
+#coursedesc {
+  text-align: justify;
+}
+#footermsg {
+  color: #333;
+  margin: 20px;
+}
+#classicons {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+.bold { font-weight: bold; }
+.red { color: #FF0000; }
